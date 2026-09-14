@@ -1,0 +1,35 @@
+# Gaming Reset
+
+> Gaming Reset is a personalised habit-change app for people who want to spend
+> less time gaming. New users answer a short series of questions about their
+> habits and their routine, and the app turns those answers into a small daily
+> plan, then tracks progress automatically so cutting back rests on structure
+> rather than willpower.
+>
+> Gaming Reset is self-improvement and habit-building software. It is not a
+> medical or therapeutic service, and it does not provide diagnosis, treatment,
+> or professional advice of any kind.
+
+## Public pages
+
+- [Home](https://gamingreset.com/): What Gaming Reset is and how the daily plan works.
+- [Plans](https://gamingreset.com/plans): Pricing, the 3 day free trial, and subscription options.
+- [Writing](https://gamingreset.com/writing): Essays on gaming habits, the design behind why games are hard to put down, and what actually works to cut back. This index is the canonical, always-current list of articles.
+- [Gaming Addiction Statistics](https://gamingreset.com/gaming-addiction-statistics): A sourced statistics reference on how common problem gaming is.
+- [Contact](https://gamingreset.com/contact): How to reach the team.
+
+## Legal
+
+- [Privacy Policy](https://gamingreset.com/privacy): How user data is collected and handled.
+- [Terms of Service](https://gamingreset.com/terms): Terms governing use of the service.
+- [Refund Policy](https://gamingreset.com/refund): Refund and cancellation terms.
+
+## Notes
+
+- Individual articles are deliberately not enumerated here. This file is
+  maintained by hand and would fall out of date every time a post ships. Use
+  the /writing index or the sitemap for the current list.
+- The dashboard, onboarding, checkout, success, leaderboard, settings, and
+  account pages are private authenticated areas. They are marked noindex and
+  are not intended for crawling or training.
+- Sitemap: https://gamingreset.com/sitemap.xml

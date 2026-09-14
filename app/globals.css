@@ -1,0 +1,69 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+:root {
+  --bg-primary: #0a0c10;
+  --bg-secondary: #0f1218;
+  --bg-card: #141820;
+  --gold: #c8a84b;
+  --gold-dim: #8a6f2e;
+  --text-primary: #e8e8e8;
+  --text-dim: #6b7280;
+  --accent-red: #e53e3e;
+  --accent-green: #38a169;
+  --border: #1e2433;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Deliberately NO global background-color or color-scheme here.
+   Both were tried and reverted: they only make sense if the whole site is dark,
+   and it is not. The marketing sections, /plans, the blog and the legal pages
+   are light by design, so a dark body shows as a dark overscroll gutter on a
+   white page, and `color-scheme: dark` would darken native controls on those
+   same light pages. Each page sets its own background instead. */
+
+/* Chrome ignores background-color on autofilled inputs and paints its own pale
+   yellow/blue, which looked broken over the dark auth cards. There is no way to
+   set the background directly; the standard workaround is a long inset shadow
+   in the colour we want, plus text-fill-color for the value itself.
+   Scoped intentionally to the dark auth/app forms, which are the only inputs
+   on the site — the contact form's card is dark too. */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #11151d inset !important;
+  box-shadow: 0 0 0 1000px #11151d inset !important;
+  -webkit-text-fill-color: #f8fafc !important;
+  caret-color: #f8fafc;
+  /* Chrome animates the autofill background in; a long delay parks it on our
+     colour instead. */
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+/* On mobile, hide the gold page scrollbar — phones use overlay scrolling,
+   so the persistent gold bar just looked out of place on tall pages. */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar { width: 0; height: 0; }
+  html, body { scrollbar-width: none; }
+}
+
+/* Gold text utility */
+.text-gold { color: var(--gold); }
+.bg-card { background-color: var(--bg-card); }
+.border-gold { border-color: var(--gold); }

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 560" width="1040" height="560" role="img" aria-label="Why a cut-off time beats an hours budget: an hours budget needs a judgement call at midnight and you keep playing, while a fixed last-queue time needs no decision and you go to bed.">
+  <rect width="1040" height="560" rx="20" fill="#ffffff"/>
+
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="520" y="58" font-size="26" font-weight="800" fill="#0f172a">Why a cut-off time beats an hours budget</text>
+    <text x="520" y="90" font-size="16" font-weight="600" fill="#64748b">One of them needs a decision at midnight. The other does not.</text>
+  </g>
+
+  <!-- The budget rule -->
+  <rect x="70" y="130" width="900" height="175" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="start">
+    <text x="106" y="172" font-size="20" font-weight="800" fill="#0f172a">&#8220;About two hours a night&#8221;</text>
+    <text x="106" y="210" font-size="16" font-weight="500" fill="#64748b">Started at 10:15. Does the twenty minutes in the lobby count?</text>
+    <text x="106" y="236" font-size="16" font-weight="500" fill="#64748b">Does the game I lost in four minutes count? Call it 11:40.</text>
+    <text x="106" y="278" font-size="18" font-weight="800" fill="#94a3b8">Still playing at 1am.</text>
+  </g>
+
+  <!-- The clock rule -->
+  <rect x="70" y="330" width="900" height="175" rx="16" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="start">
+    <text x="106" y="372" font-size="20" font-weight="800" fill="#0f172a">&#8220;Last queue at eleven&#8221;</text>
+    <text x="106" y="410" font-size="16" font-weight="500" fill="#64748b">It is 11:04.</text>
+    <text x="106" y="436" font-size="16" font-weight="500" fill="#64748b">There is nothing left to work out.</text>
+    <text x="106" y="478" font-size="18" font-weight="800" fill="#16a34a">In bed by 11:30.</text>
+  </g>
+
+  <text x="520" y="536" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="600" fill="#94a3b8">A number you have to interpret loses to a time you can only obey.</text>
+</svg>

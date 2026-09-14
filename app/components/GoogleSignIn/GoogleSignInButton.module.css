@@ -1,0 +1,51 @@
+.wrap {
+  position: relative;
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Host for the Google-rendered button (an iframe). Force a light color-scheme
+   so the button renders consistently regardless of the user's OS dark mode. */
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color-scheme: light;
+}
+
+.busy,
+.block {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+/* Covers the button with a white veil + spinner while sign-in is in flight. */
+.busy {
+  background: #fff;
+}
+
+/* Transparent shield that intercepts clicks while the parent form is busy. */
+.block {
+  background: transparent;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-top-color: #1a1a1a;
+  border-radius: 50%;
+  animation: gsiSpin 0.7s linear infinite;
+}
+
+@keyframes gsiSpin {
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 560" width="1040" height="560" role="img" aria-label="One question tells you which situation you are in: if you are playing less and enjoying it less, you have moved on and nothing needs fixing. If you are playing the same amount or more while enjoying it less, the hours did not follow the enjoyment down, and that gap is worth acting on.">
+  <rect width="1040" height="560" rx="20" fill="#ffffff"/>
+
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="520" y="58" font-size="26" font-weight="800" fill="#0f172a">One question tells you which one you are</text>
+    <text x="520" y="90" font-size="16" font-weight="600" fill="#64748b">Are you playing less than you used to, or the same?</text>
+  </g>
+
+  <!-- Outgrown it -->
+  <rect x="70" y="130" width="900" height="175" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="start">
+    <text x="106" y="172" font-size="20" font-weight="800" fill="#0f172a">Playing less, enjoying it less</text>
+    <text x="106" y="210" font-size="16" font-weight="500" fill="#64748b">Those are the same fact, and the word for it is moving on.</text>
+    <text x="106" y="236" font-size="16" font-weight="500" fill="#64748b">Every hobby does this eventually.</text>
+    <text x="106" y="278" font-size="18" font-weight="800" fill="#16a34a">Nothing here needs fixing.</text>
+  </g>
+
+  <!-- The gap -->
+  <rect x="70" y="330" width="900" height="175" rx="16" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="start">
+    <text x="106" y="372" font-size="20" font-weight="800" fill="#0f172a">Playing the same or more, enjoying it less</text>
+    <text x="106" y="410" font-size="16" font-weight="500" fill="#64748b">The hours did not follow the enjoyment down.</text>
+    <text x="106" y="436" font-size="16" font-weight="500" fill="#64748b">Something other than fun is keeping them there.</text>
+    <text x="106" y="478" font-size="18" font-weight="800" fill="#3b82f6">This is the one worth acting on.</text>
+  </g>
+
+  <text x="520" y="536" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="600" fill="#94a3b8">Boredom on its own is not the signal. Boredom that did not reduce the hours is.</text>
+</svg>

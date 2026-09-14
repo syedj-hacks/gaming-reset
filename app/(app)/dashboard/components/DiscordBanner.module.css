@@ -1,0 +1,291 @@
+/* DiscordBanner.module.css */
+/* Matches the dark tactical theme of the dashboard */
+
+.banner {
+  background: #0d1017;
+  border: 1px solid rgba(88, 101, 242, 0.2);
+  border-radius: 20px;
+  padding: 24px 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle Discord-purple glow in the background */
+.bannerGlow {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(88, 101, 242, 0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* ── Main layout ── */
+.bannerInner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.bannerLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  flex: 1;
+  min-width: 200px;
+}
+
+/* ── Discord icon circle ── */
+.discordIconWrap {
+  width: 40px;
+  height: 40px;
+  background: rgba(88, 101, 242, 0.12);
+  border: 1px solid rgba(88, 101, 242, 0.25);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── Text ── */
+.bannerText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bannerTitle {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.optionalTag {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #334155;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.bannerSub {
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 320px;
+}
+
+/* ── Form ── */
+.bannerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 220px;
+}
+
+.inputWrap {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.inputWrap:focus-within {
+  border-color: rgba(88, 101, 242, 0.5);
+  box-shadow: 0 0 0 3px rgba(88, 101, 242, 0.08);
+}
+
+.atSign {
+  padding: 0 4px 0 12px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #334155;
+  user-select: none;
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 10px 12px 10px 2px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #f1f5f9;
+  font-family: inherit;
+  min-width: 0;
+}
+
+.input::placeholder { color: #1e293b; }
+.input:disabled { opacity: 0.5; }
+
+.errorText {
+  font-size: 0.75rem;
+  color: #f87171;
+  font-weight: 500;
+  padding: 0 2px;
+}
+
+.formRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ── Buttons ── */
+.submitBtn {
+  flex: 1;
+  padding: 9px 16px;
+  background: #5865F2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #4752c4;
+  transform: translateY(-1px);
+}
+
+.submitBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.dismissBtn {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #334155;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 4px;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.dismissBtn:hover { color: #475569; }
+
+/* ── Spinner ── */
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Confirmed state ── */
+.confirmedRow {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.confirmedText {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+}
+
+.confirmedLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #334155;
+}
+
+.confirmedName {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.linkedActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.joinBtn {
+  padding: 8px 14px;
+  background: #5865F2;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.joinBtn:hover {
+  background: #4752c4;
+  transform: translateY(-1px);
+}
+
+.inviteHint {
+  font-size: 0.75rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+.changeBtn {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #334155;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 4px;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.changeBtn:hover { color: #475569; }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .banner { padding: 20px; }
+  .bannerInner { flex-direction: column; gap: 16px; }
+  .bannerForm { width: 100%; }
+  .bannerLeft { align-items: flex-start; }
+  .confirmedRow { flex-wrap: wrap; }
+  .linkedActions { width: 100%; justify-content: flex-start; }
+}

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Two different problems on a late gaming night: why you cannot fall asleep, which every guide answers, and why you did not stop playing, which almost none of them do.">
+  <rect width="1200" height="630" rx="20" fill="#ffffff"/>
+
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="64" font-size="30" font-weight="800" fill="#0f172a">Two different problems, one bedtime</text>
+    <text x="600" y="100" font-size="17" font-weight="600" fill="#64748b">Almost every guide on late night gaming answers only the first one</text>
+  </g>
+
+  <!-- Card A: the problem everyone answers -->
+  <rect x="70" y="150" width="490" height="330" rx="18" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="start">
+    <text x="106" y="196" font-size="13" font-weight="800" letter-spacing="1.5" fill="#94a3b8">WHY YOU CANNOT FALL ASLEEP</text>
+    <text x="106" y="248" font-size="21" font-weight="700" fill="#0f172a">Bright screen, fast heart rate,</text>
+    <text x="106" y="280" font-size="21" font-weight="700" fill="#0f172a">a brain still in the match.</text>
+    <line x1="106" y1="312" x2="524" y2="312" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="106" y="348" font-size="15" font-weight="700" fill="#64748b">Answered by every guide:</text>
+    <text x="106" y="376" font-size="16" font-weight="500" fill="#475569">amber glasses, no caffeine,</text>
+    <text x="106" y="402" font-size="16" font-weight="500" fill="#475569">device out of the bedroom.</text>
+    <text x="106" y="448" font-size="17" font-weight="800" fill="#94a3b8">Costs you fifteen minutes.</text>
+  </g>
+
+  <!-- Card B: the problem almost nobody answers -->
+  <rect x="640" y="150" width="490" height="330" rx="18" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="start">
+    <text x="676" y="196" font-size="13" font-weight="800" letter-spacing="1.5" fill="#3b82f6">WHY YOU DID NOT STOP</text>
+    <text x="676" y="248" font-size="21" font-weight="700" fill="#0f172a">It is 12:40, you are not even</text>
+    <text x="676" y="280" font-size="21" font-weight="700" fill="#0f172a">enjoying it, and you queue.</text>
+    <line x1="676" y1="312" x2="1094" y2="312" stroke="#bfdbfe" stroke-width="2"/>
+    <text x="676" y="348" font-size="15" font-weight="700" fill="#64748b">Answered almost nowhere.</text>
+    <text x="676" y="376" font-size="16" font-weight="500" fill="#475569">Nothing is keeping you up.</text>
+    <text x="676" y="402" font-size="16" font-weight="500" fill="#475569">That is the whole problem.</text>
+    <text x="676" y="448" font-size="17" font-weight="800" fill="#3b82f6">Costs you the night.</text>
+  </g>
+
+  <text x="600" y="570" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#94a3b8">Fix the second one and the first one mostly takes care of itself.</text>
+</svg>

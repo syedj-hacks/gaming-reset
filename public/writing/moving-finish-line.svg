@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="The ranked ladder as a finish line that keeps moving: you swear you will quit at Gold, then it becomes Platinum, then just Diamond, and the target keeps stepping one rank ahead of wherever you are.">
+  <rect width="1200" height="630" rx="20" fill="#ffffff"/>
+
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="70" font-size="30" font-weight="800" fill="#0f172a">The finish line that keeps moving</text>
+    <text x="600" y="104" font-size="17" font-weight="600" fill="#64748b">Every rank you swear you will stop at becomes the next one's starting line</text>
+  </g>
+
+  <!-- the ladder line, never ending -->
+  <line x1="150" y1="420" x2="1010" y2="420" stroke="#e2e8f0" stroke-width="3"/>
+  <path d="M1010 420 l-16 -9 l0 18 z" fill="#cbd5e1"/>
+  <text x="1050" y="426" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="800" fill="#cbd5e1">…</text>
+
+  <!-- Gold: passed, struck -->
+  <line x1="300" y1="300" x2="300" y2="404" stroke="#e2e8f0" stroke-width="2"/>
+  <circle cx="300" cy="420" r="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="4"/>
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="300" y="278" font-size="18" font-weight="800" fill="#94a3b8">Quit at Gold</text>
+    <line x1="228" y1="272" x2="372" y2="272" stroke="#cbd5e1" stroke-width="3"/>
+    <text x="300" y="464" font-size="16" font-weight="700" fill="#94a3b8">Gold</text>
+  </g>
+
+  <!-- Platinum: passed, struck -->
+  <line x1="560" y1="300" x2="560" y2="404" stroke="#e2e8f0" stroke-width="2"/>
+  <circle cx="560" cy="420" r="9" fill="#ffffff" stroke="#cbd5e1" stroke-width="4"/>
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="560" y="278" font-size="18" font-weight="800" fill="#94a3b8">Then Platinum</text>
+    <line x1="474" y1="272" x2="646" y2="272" stroke="#cbd5e1" stroke-width="3"/>
+    <text x="560" y="464" font-size="16" font-weight="700" fill="#94a3b8">Platinum</text>
+  </g>
+
+  <!-- Diamond: current target -->
+  <line x1="820" y1="288" x2="820" y2="404" stroke="#bfdbfe" stroke-width="2"/>
+  <circle cx="820" cy="420" r="10" fill="#ffffff" stroke="#3b82f6" stroke-width="4"/>
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <rect x="742" y="252" width="156" height="34" rx="17" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
+    <text x="820" y="275" font-size="18" font-weight="800" fill="#3b82f6">Just Diamond</text>
+    <text x="820" y="464" font-size="16" font-weight="800" fill="#0f172a">Diamond</text>
+  </g>
+
+  <text x="600" y="560" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#94a3b8">You never arrive, because arriving was never part of the design.</text>
+</svg>

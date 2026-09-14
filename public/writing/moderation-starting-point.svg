@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 560" width="1040" height="560" role="img" aria-label="Which starting point is yours: go straight to moderation if limits have held before, you play mainly to compete or socialise, and you can stop mid-session when you decide to; take two weeks off first if limits collapse the same night, you play mainly to escape, and one more game wins most nights.">
+  <defs>
+    <linearGradient id="badgeA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="badgeB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1040" height="560" rx="20" fill="#ffffff"/>
+
+  <text x="520" y="64" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="25" font-weight="800" fill="#0f172a">Which starting point is yours?</text>
+
+  <!-- Card A -->
+  <g font-family="'Segoe UI', Arial, sans-serif">
+    <rect x="40" y="100" width="460" height="360" rx="16" fill="#f8fafc" stroke="#e6e8ee" stroke-width="1.5"/>
+    <circle cx="80" cy="142" r="20" fill="url(#badgeA)"/>
+    <text x="80" y="149" text-anchor="middle" font-size="19" font-weight="800" fill="#ffffff">A</text>
+    <text x="116" y="150" font-size="22" font-weight="800" fill="#0f172a">Moderate from here</text>
+    <text x="80" y="198" font-size="12" font-weight="700" letter-spacing="1.2" fill="#94a3b8">IF ALL THREE ARE TRUE</text>
+    <text font-size="16" fill="#475569">
+      <tspan x="80" y="232">A limit you set has actually held</tspan>
+      <tspan x="80" y="256">before, at least sometimes.</tspan>
+      <tspan x="80" y="296">You mostly play to compete,</tspan>
+      <tspan x="80" y="320">improve, or see friends.</tspan>
+      <tspan x="80" y="360">You can stop mid-session when</tspan>
+      <tspan x="80" y="384">you decide to.</tspan>
+    </text>
+    <text x="80" y="428" font-size="15" font-weight="700" fill="#2563eb">Set the rule. Start this week.</text>
+  </g>
+
+  <!-- Card B -->
+  <g font-family="'Segoe UI', Arial, sans-serif">
+    <rect x="540" y="100" width="460" height="360" rx="16" fill="#f8fafc" stroke="#e6e8ee" stroke-width="1.5"/>
+    <circle cx="580" cy="142" r="20" fill="url(#badgeB)"/>
+    <text x="580" y="149" text-anchor="middle" font-size="19" font-weight="800" fill="#ffffff">B</text>
+    <text x="616" y="150" font-size="22" font-weight="800" fill="#0f172a">Two weeks off first</text>
+    <text x="580" y="198" font-size="12" font-weight="700" letter-spacing="1.2" fill="#94a3b8">IF ANY OF THESE ARE TRUE</text>
+    <text font-size="16" fill="#475569">
+      <tspan x="580" y="232">Every limit you set collapses</tspan>
+      <tspan x="580" y="256">the same night you set it.</tspan>
+      <tspan x="580" y="296">You mostly play to be somewhere</tspan>
+      <tspan x="580" y="320">other than your own life.</tspan>
+      <tspan x="580" y="360">"One more" wins most nights,</tspan>
+      <tspan x="580" y="384">whatever you told yourself.</tspan>
+    </text>
+    <text x="580" y="428" font-size="15" font-weight="700" fill="#d97706">Break first. Then set the rule.</text>
+  </g>
+
+  <text x="520" y="516" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="600" fill="#94a3b8">Moderation is a real goal. It is just not always the right first move.</text>
+</svg>

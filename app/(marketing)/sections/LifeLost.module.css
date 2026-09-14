@@ -1,0 +1,167 @@
+.section {
+  position: relative;
+  /* Dark, to sit between Mirror (#060608) and TimeReclaimed (#0c1423). This
+     section was light when it lived on the old homepage; against the new dark
+     page it read as a white slab. */
+  background: #090d15;
+  padding: 130px 24px;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  top: 40%;
+  right: 6%;
+  width: 560px;
+  height: 560px;
+  transform: translateY(-50%);
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.13),
+    transparent 64%
+  );
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #60a5fa;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: clamp(2.2rem, 4.4vw, 3.3rem);
+  font-weight: 800;
+  color: #e8edf5;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+  margin: 0 0 26px;
+}
+
+.big {
+  font-variant-numeric: tabular-nums;
+  color: #60a5fa;
+}
+
+.accent {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lead {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: #a3b0c4;
+  max-width: 480px;
+  margin: 0 0 22px;
+}
+
+.note {
+  font-size: 0.86rem;
+  color: #8494ad;
+  margin: 0;
+}
+
+.gridWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(23, 1fr);
+  gap: 7px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.dot {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.09);
+  transition:
+    background 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+.dotLost {
+  background: #3b82f6;
+  box-shadow: 0 0 9px rgba(59, 130, 246, 0.55);
+  transform: scale(1.15);
+}
+
+@media (max-width: 880px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .lead {
+    max-width: 560px;
+  }
+  .grid {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 22px;
+  }
+  .inner {
+    gap: 28px;
+  }
+  .eyebrow {
+    margin-bottom: 12px;
+  }
+  .title {
+    margin-bottom: 14px;
+  }
+  .lead {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  /* More columns = fewer rows = a shorter grid that doesn't dominate the screen. */
+  .grid {
+    grid-template-columns: repeat(25, 1fr);
+    gap: 5px;
+    max-width: 320px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    transition: none;
+  }
+  .dotLost {
+    transform: none;
+  }
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}

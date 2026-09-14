@@ -1,0 +1,8 @@
+﻿# Homepage media
+
+- `late-night.webp`: original AI-generated editorial illustration, made with the built-in image generation tool. A fictional adult student gaming beside unfinished coursework; not a real customer or product screenshot. Compressed to 1600px WebP for responsive Next Image delivery.
+- Library and desktop previews are illustrative HTML/CSS. Numbers are examples, not measurements from the visitor's gaming accounts.
+
+## Image generation prompt (built-in tool)
+
+Use case: photorealistic-natural. Create one cinematic premium website editorial photo, landscape 16:9, 1536x1024 or wide. A realistic modest university student's bedroom at 2am, shot from behind and slightly to the side of an adult college student age 21 wearing headphones at a desktop computer, captivated by an indistinct blue-lit competitive game on monitor. Subject on right third, silhouette not identifiable, no visible face necessary. On desk in foreground clearly visible untouched open textbook, notebook, loose assignment papers, pencil, mug; laptop to the side with indistinct application form, no legible writing. Cool electric blue screen light (#3b82f6), deep near-black navy shadows, subtle warm lamp illuminating neglected coursework. Human, relatable, slightly messy but not extreme or shameful. Left third dark negative space, powerful depth and professional film-still lighting. NOT a luxury neon gaming setup, NO forests or nature, NO logos, NO generated text or watermarks, no split screen. The image should communicate a whole evening disappearing into gaming while tomorrow's responsibilities wait. This is a project asset for a gaming habit-change homepage.

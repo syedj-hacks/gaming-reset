@@ -1,0 +1,91 @@
+.footer {
+  width: 100%;
+  background: #0a0a0a;
+  padding: 80px 24px 48px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  box-sizing: border-box;
+}
+
+.container { max-width: 1200px; margin: 0 auto; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 64px;
+  margin-bottom: 64px;
+}
+
+.brand { display: flex; flex-direction: column; gap: 20px; }
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.desc { font-size: 0.9rem; line-height: 1.6; color: #94a3b8; max-width: 320px; margin: 0; }
+
+.social {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+}
+.social:hover { color: #3b82f6; transform: translateX(2px); }
+
+.col { display: flex; flex-direction: column; gap: 14px; }
+
+.col h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #f8fafc;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 6px;
+}
+
+.col a {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.2s, transform 0.2s;
+}
+.col a:hover { color: #3b82f6; transform: translateX(2px); }
+
+.floor {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.copy { font-size: 0.82rem; color: #7d8a9c; margin: 0; }
+
+.disclaimer {
+  flex: 1 1 100%;
+  order: -1;
+  font-size: 0.84rem;
+  line-height: 1.65;
+  color: #94a3b8;
+  margin: 0 0 8px;
+  max-width: 720px;
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .brand { grid-column: span 2; }
+}
+
+@media (max-width: 640px) {
+  .footer { padding: 56px 22px 40px; }
+  .grid { grid-template-columns: 1fr; gap: 32px; margin-bottom: 40px; }
+  .brand { grid-column: span 1; }
+  .floor { flex-direction: column-reverse; align-items: flex-start; padding-top: 28px; }
+}

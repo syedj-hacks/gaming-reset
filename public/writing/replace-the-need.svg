@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 560" width="1040" height="560" role="img" aria-label="Match the replacement to the need the game was meeting: competence gave you a rank that moved and is replaced by a skill with a visible curve; autonomy gave you hours that were yours and is replaced by something you actually chose; relatedness gave you a team and is replaced by anything with other people in it.">
+  <defs>
+    <linearGradient id="badge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1040" height="560" rx="20" fill="#ffffff"/>
+
+  <text x="520" y="64" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="25" font-weight="800" fill="#0f172a">What was the game actually giving you?</text>
+
+  <!-- Card 1: Competence -->
+  <g font-family="'Segoe UI', Arial, sans-serif">
+    <rect x="40" y="100" width="300" height="380" rx="16" fill="#f8fafc" stroke="#e6e8ee" stroke-width="1.5"/>
+    <circle cx="78" cy="142" r="20" fill="url(#badge)"/>
+    <text x="78" y="149" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">1</text>
+    <text x="112" y="150" font-size="21" font-weight="800" fill="#0f172a">Competence</text>
+    <text x="78" y="200" font-size="12" font-weight="700" letter-spacing="1.2" fill="#94a3b8">IN THE GAME</text>
+    <text font-size="15" fill="#475569">
+      <tspan x="78" y="226">A rank that moved. Proof</tspan>
+      <tspan x="78" y="248">you were getting better</tspan>
+      <tspan x="78" y="270">at something hard.</tspan>
+    </text>
+    <text x="78" y="316" font-size="12" font-weight="700" letter-spacing="1.2" fill="#94a3b8">INSTEAD</text>
+    <text font-size="15" fill="#0f172a">
+      <tspan x="78" y="342">A skill with a visible</tspan>
+      <tspan x="78" y="364">curve: lifting, a craft,</tspan>
+      <tspan x="78" y="386">an instrument, a language.</tspan>
+    </text>
+  </g>
+
+  <!-- Card 2: Autonomy -->
+  <g font-family="'Segoe UI', Arial, sans-serif">
+    <rect x="370" y="100" width="300" height="380" rx="16" fill="#f8fafc" stroke="#e6e8ee" stroke-width="1.5"/>
+    <circle cx="408" cy="142" r="20" fill="url(#badge)"/>
+    <text x="408" y="149" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">2</text>
+    <text x="442" y="150" font-size="21" font-weight="800" fill="#0f172a">Autonomy</text>
+    <text x="408" y="200" font-size="12" font-weight="700" letter-spacing="1.2" fill="#94a3b8">IN THE GAME</text>
+    <text font-size="15" fill="#475569">
+      <tspan x="408" y="226">Hours that were yours.</tspan>
+      <tspan x="408" y="248">Nobody's agenda, nothing</tspan>
+      <tspan x="408" y="270">owed to anyone.</tspan>
+    </text>
+    <text x="408" y="316" font-size="12" font-weight="700" letter-spacing="1.2" fill="#94a3b8">INSTEAD</text>
+    <text font-size="15" fill="#0f172a">
+      <tspan x="408" y="342">Something you actually</tspan>
+      <tspan x="408" y="364">chose, not the thing you</tspan>
+      <tspan x="408" y="386">think you should do.</tspan>
+    </text>
+  </g>
+
+  <!-- Card 3: Relatedness -->
+  <g font-family="'Segoe UI', Arial, sans-serif">
+    <rect x="700" y="100" width="300" height="380" rx="16" fill="#f8fafc" stroke="#e6e8ee" stroke-width="1.5"/>
+    <circle cx="738" cy="142" r="20" fill="url(#badge)"/>
+    <text x="738" y="149" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">3</text>
+    <text x="772" y="150" font-size="21" font-weight="800" fill="#0f172a">Relatedness</text>
+    <text x="738" y="200" font-size="12" font-weight="700" letter-spacing="1.2" fill="#94a3b8">IN THE GAME</text>
+    <text font-size="15" fill="#475569">
+      <tspan x="738" y="226">A team, a voice channel,</tspan>
+      <tspan x="738" y="248">people who noticed when</tspan>
+      <tspan x="738" y="270">you didn't show up.</tspan>
+    </text>
+    <text x="738" y="316" font-size="12" font-weight="700" letter-spacing="1.2" fill="#94a3b8">INSTEAD</text>
+    <text font-size="15" fill="#0f172a">
+      <tspan x="738" y="342">Anything with other</tspan>
+      <tspan x="738" y="364">people in it. Group beats</tspan>
+      <tspan x="738" y="386">solo, reliably.</tspan>
+    </text>
+  </g>
+
+  <text x="520" y="524" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="600" fill="#94a3b8">Pick for the need the game was meeting, not for the virtue.</text>
+</svg>

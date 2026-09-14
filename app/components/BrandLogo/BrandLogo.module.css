@@ -1,0 +1,28 @@
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* A rounded square rotated 45° = the diamond mark, with a soft brand glow.
+   Same construction as the mobile app's Logo glyph. */
+.diamond {
+  display: block;
+  flex-shrink: 0;
+  border-radius: 24%;
+  transform: rotate(45deg);
+  background: linear-gradient(180deg, #60a5fa 0%, #3b82f6 65%);
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.5);
+}
+
+.text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #f8fafc;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.accent {
+  color: #3b82f6;
+}

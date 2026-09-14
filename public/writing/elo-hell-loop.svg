@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 560" width="1040" height="560" role="img" aria-label="Elo hell is a belief, not a system: deciding the game is rigged leads to tilt and blaming teammates, which leads to worse play and chasing losses, which loses LP, which feels like proof the game was rigged, and the loop repeats.">
+  <rect width="1040" height="560" rx="20" fill="#ffffff"/>
+
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="520" y="58" font-size="26" font-weight="800" fill="#0f172a">Elo hell is a belief, not a system</text>
+    <text x="520" y="88" font-size="16" font-weight="600" fill="#64748b">The loop is real. The rigging is not.</text>
+  </g>
+
+  <!-- four stages -->
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <rect x="70" y="140" width="200" height="86" rx="14" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="170" y="178" font-size="15" font-weight="800" fill="#0f172a">You decide the</text>
+    <text x="170" y="198" font-size="15" font-weight="800" fill="#0f172a">game is rigged</text>
+
+    <rect x="310" y="140" width="200" height="86" rx="14" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="410" y="178" font-size="15" font-weight="800" fill="#0f172a">You tilt, blame</text>
+    <text x="410" y="198" font-size="15" font-weight="800" fill="#0f172a">the team, flame</text>
+
+    <rect x="550" y="140" width="200" height="86" rx="14" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="650" y="178" font-size="15" font-weight="800" fill="#0f172a">You play worse,</text>
+    <text x="650" y="198" font-size="15" font-weight="800" fill="#0f172a">chase the loss</text>
+
+    <rect x="770" y="140" width="200" height="86" rx="14" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
+    <text x="870" y="178" font-size="15" font-weight="800" fill="#1e40af">You lose LP.</text>
+    <text x="870" y="198" font-size="15" font-weight="800" fill="#1e40af">"See, rigged."</text>
+  </g>
+
+  <!-- forward arrows -->
+  <g stroke="#cbd5e1" stroke-width="3" fill="none">
+    <path d="M270 183 L302 183"/>
+    <path d="M510 183 L542 183"/>
+    <path d="M750 183 L762 183"/>
+  </g>
+  <g fill="#cbd5e1">
+    <path d="M302 183 l-12 -6 l0 12 z"/>
+    <path d="M542 183 l-12 -6 l0 12 z"/>
+    <path d="M762 183 l-12 -6 l0 12 z"/>
+  </g>
+
+  <!-- loop-back arrow underneath -->
+  <path d="M870 226 L870 300 L170 300 L170 226" fill="none" stroke="#3b82f6" stroke-width="3" stroke-dasharray="7 6"/>
+  <path d="M170 226 l-6 12 l12 0 z" fill="#3b82f6"/>
+  <text x="520" y="292" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#3b82f6">and the belief confirms itself</text>
+
+  <!-- the counter-fact -->
+  <rect x="140" y="360" width="760" height="96" rx="16" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="2"/>
+  <g font-family="'Segoe UI', Arial, sans-serif">
+    <text x="520" y="396" text-anchor="middle" font-size="15" font-weight="800" fill="#15803d">What Riot actually says</text>
+    <text x="520" y="424" text-anchor="middle" font-size="16" font-weight="600" fill="#166534">Most teams have an expected win rate of 50 ±1%. There is no losers queue</text>
+    <text x="520" y="444" text-anchor="middle" font-size="16" font-weight="600" fill="#166534">pairing you with worse teammates on purpose.</text>
+  </g>
+
+  <text x="520" y="512" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="600" fill="#94a3b8">The system is not against you. The loop you run after a loss is.</text>
+</svg>

@@ -1,0 +1,156 @@
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(20px); }
+}
+
+.banner {
+  position: fixed;
+  bottom: 24px;
+  /* Centred with auto margins, NOT `left: 50%; transform: translateX(-50%)`.
+     Both slideUp and slideDown animate `transform`, and an animation's value
+     replaces the base declaration for the whole element — so any X-shift set
+     here is wiped the instant the banner animates in, leaving it placed by
+     `left` alone. That is what put the Accept button off the right edge on
+     every viewport between ~640px and ~1200px, where `overflow-x: hidden`
+     made it unreachable rather than merely off-centre. Auto margins keep the
+     centring in the box model, where the animation cannot reach it. */
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  z-index: 9000;
+  width: calc(100% - 48px);
+  max-width: 900px;
+  background: #0d1017;
+  border: 1px solid rgba(59,130,246,0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.03),
+    0 24px 60px rgba(0,0,0,0.6);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.bannerEntering {
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.bannerLeaving {
+  animation: slideDown 0.35s ease forwards;
+}
+
+.bannerGlow {
+  position: absolute;
+  top: -60px; left: -60px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.bannerInner {
+  position: relative;
+  z-index: 2;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.left { flex: 1; min-width: 260px; }
+
+.iconRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.icon {
+  font-size: 0.9rem;
+  color: #3b82f6;
+}
+
+.label {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #3b82f6;
+}
+
+.text {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #64748b;
+  margin: 0;
+}
+
+.link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.link:hover { color: #60a5fa; }
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  flex-shrink: 0;
+  min-width: 180px;
+}
+
+.btnAccept {
+  padding: 10px 20px;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.80rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+  text-align: center;
+}
+
+.btnAccept:hover {
+  background: #3b82f6;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(59,130,246,0.3);
+  transform: translateY(-1px);
+}
+
+.btnLearn {
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #7d8a9c;
+  text-decoration: none;
+  text-align: center;
+  font-family: inherit;
+  transition: background 0.2s, color 0.2s;
+}
+.btnLearn:hover { background: rgba(255,255,255,0.08); color: #94a3b8; }
+
+@media (max-width: 640px) {
+  /* No `transform: none` here: the entry animation's transform always won over
+     it, so it never did anything. Full-bleed at this width, so the auto margins
+     from the base rule collapse to zero on their own. */
+  .banner { bottom: 0; left: 0; right: 0; width: 100%; max-width: 100%; border-radius: 20px 20px 0 0; }
+  .bannerEntering { animation: slideUp 0.4s cubic-bezier(0.16,1,0.3,1) forwards; }
+  .bannerInner { padding: 20px; gap: 20px; }
+  .actions { flex-direction: row; min-width: auto; }
+  .btnAccept, .btnLearn { flex: 1; }
+}

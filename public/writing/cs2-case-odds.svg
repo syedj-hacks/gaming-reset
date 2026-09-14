@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Valve's published odds for a standard CS2 weapon case, drawn to scale: 79.92 percent Mil-Spec, 15.98 percent Restricted, 3.20 percent Classified, 0.64 percent Covert, and 0.26 percent for a knife or gloves, which is about one in 385 cases.">
+  <rect width="1200" height="630" rx="20" fill="#ffffff"/>
+
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="70" font-size="30" font-weight="800" fill="#0f172a">What a case actually pays out</text>
+    <text x="600" y="104" font-size="17" font-weight="600" fill="#64748b">Valve's published odds for a standard weapon case, drawn to scale</text>
+  </g>
+
+  <!-- Bar: 1000px wide from x=100, representing 100% -->
+  <g>
+    <rect x="100" y="250" width="799.2" height="64" fill="#e2e8f0"/>
+    <rect x="899.2" y="250" width="159.8" height="64" fill="#cbd5e1"/>
+    <rect x="1059" y="250" width="32" height="64" fill="#94a3b8"/>
+    <rect x="1091" y="250" width="6.4" height="64" fill="#64748b"/>
+    <rect x="1097.4" y="250" width="2.6" height="64" fill="#3b82f6"/>
+    <rect x="100" y="250" width="1000" height="64" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+  </g>
+
+  <!-- Labels for the two visible bands -->
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="499" y="290" font-size="18" font-weight="800" fill="#475569">Mil-Spec  79.92%</text>
+    <text x="979" y="290" font-size="15" font-weight="800" fill="#475569">15.98%</text>
+  </g>
+
+  <!-- Leader line to the rare special sliver -->
+  <line x1="1098.7" y1="250" x2="1098.7" y2="196" stroke="#bfdbfe" stroke-width="2"/>
+  <line x1="1098.7" y1="196" x2="880" y2="196" stroke="#bfdbfe" stroke-width="2"/>
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="end">
+    <text x="866" y="192" font-size="19" font-weight="800" fill="#3b82f6">Knife or gloves: 0.26%</text>
+    <text x="866" y="216" font-size="16" font-weight="600" fill="#64748b">about 1 in 385 cases</text>
+  </g>
+
+  <!-- The thin tiers, called out below -->
+  <line x1="1075" y1="314" x2="1075" y2="360" stroke="#e2e8f0" stroke-width="2"/>
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="1075" y="384" font-size="15" font-weight="700" fill="#94a3b8">Classified 3.20%</text>
+    <text x="1075" y="406" font-size="15" font-weight="700" fill="#94a3b8">Covert 0.64%</text>
+  </g>
+
+  <text x="600" y="480" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#0f172a">The odds are disclosed, consistent, and entirely the point.</text>
+  <text x="600" y="520" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#64748b">An uncertain reward on an unpredictable schedule is the most durable way</text>
+  <text x="600" y="544" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#64748b">anyone has found to keep a behaviour going.</text>
+  <text x="600" y="584" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="600" fill="#94a3b8">The spinning animation is not decoration. It is the product.</text>
+</svg>

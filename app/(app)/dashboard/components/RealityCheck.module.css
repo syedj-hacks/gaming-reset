@@ -1,0 +1,111 @@
+/* RealityCheck.module.css */
+/* A stark, high-contrast pattern-interrupt card. Built to be remembered. */
+
+.section { margin-top: 4px; }
+
+.card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 44px 34px;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(239,68,68,0.10) 0%, transparent 70%),
+    linear-gradient(180deg, #0e0b0d 0%, #0a0a0f 100%);
+  border: 1px solid rgba(239, 68, 68, 0.18);
+  text-align: center;
+  transition: border-color 0.2s ease, transform 0.12s ease;
+}
+.card:hover { border-color: rgba(239, 68, 68, 0.32); }
+.card:active { transform: scale(0.995); }
+
+.glow {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 360px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(239,68,68,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ef4444;
+  margin-bottom: 22px;
+}
+.labelDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.8);
+  animation: rcPulse 1.8s ease-in-out infinite;
+}
+@keyframes rcPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.4; transform: scale(0.8); }
+}
+
+.line {
+  position: relative;
+  margin: 0 auto;
+  max-width: 620px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(22px, 3.4vw, 32px);
+  font-weight: 800;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  color: #f8fafc;
+  text-wrap: balance;
+  animation: rcIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes rcIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tapHint {
+  position: relative;
+  display: block;
+  margin-top: 26px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  transition: color 0.2s ease;
+}
+.card:hover .tapHint { color: #94a3b8; }
+
+@media (prefers-reduced-motion: reduce) {
+  .line { animation: none; }
+  .labelDot { animation: none; }
+}
+
+/* A quiet editorial pause inside the dashboard. */
+.section { margin: 0; }
+.card { background: radial-gradient(ellipse at 0 100%, #2c527e28, transparent 60%), #111e2e; border: 1px solid #86b2ee2c; border-radius: 11px; padding: 31px; box-shadow: none; }
+.glow { opacity: .2; }
+.label { font-size: 11px; font-weight: 500; letter-spacing: 1.5px; color: #8fb2e1; }
+.labelDot { background: #8cb9f5; box-shadow: none; animation: none; }
+.line { font-family: Georgia, serif; font-size: clamp(22px, 2.5vw, 31px); font-weight: 400; line-height: 1.45; letter-spacing: -.5px; color: #b0cceb; }
+.tapHint { font-size: 12px; color: #698bb6; }
+@media (max-width: 700px) { .card { padding: 25px; } .line { font-size: 24px; } }
+@media (prefers-reduced-motion: reduce) { .card, .card * { animation: none !important; transition: none !important; } }
+
+/* An editorial pause, rather than another dashboard card. */
+.card { background: transparent; border: 0; border-left: 2px solid #c5a87570; border-radius: 0; box-shadow: none; padding: 13px 30px 17px; text-align: left; }
+.card:hover { background: #c6ab7c04; border-color: #d3b886; box-shadow: none; transform: none; }
+.glow { display: none; }
+.label { color: #c0ab88; }
+.labelDot { background: #c8aa75; }
+.line { color: #dfd5c4; font-size: clamp(25px, 2.7vw, 35px); line-height: 1.5; max-width: 850px; text-wrap: pretty; }
+.tapHint, .card:hover .tapHint { color: #a49883; }
+@media (max-width: 700px) { .card { padding: 9px 20px 15px; } .line { font-size: 26px; } }

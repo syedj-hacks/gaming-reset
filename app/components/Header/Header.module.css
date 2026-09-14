@@ -1,0 +1,370 @@
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 24px;
+  transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+/* ── Settings Dropdown ── */
+.settingsWrap {
+  position: relative;
+}
+
+.settingsBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.settingsBtnOpen {
+  color: #f8fafc !important;
+  background: rgba(255,255,255,0.06) !important;
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+  opacity: 0.6;
+}
+.chevronOpen { transform: rotate(180deg); }
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 240px;
+  background: #0d1017;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 8px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.03);
+  z-index: 200;
+  animation: dropdownIn 0.15s cubic-bezier(0.16,1,0.3,1);
+}
+
+@keyframes dropdownIn {
+  from { opacity: 0; transform: translateY(-6px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+.dropdownSection { display: flex; flex-direction: column; gap: 2px; }
+
+.dropdownLabel {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #334155;
+  padding: 8px 12px 4px;
+  display: block;
+}
+
+.dropdownItem {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 10px;
+  align-items: start;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #94a3b8;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  transition: background 0.15s, color 0.15s;
+}
+
+.dropdownItem:hover {
+  background: rgba(255,255,255,0.05);
+  color: #f1f5f9;
+}
+
+.dropdownIcon {
+  grid-row: 1 / 3;
+  font-size: 0.75rem;
+  color: #3b82f6;
+  margin-top: 3px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.dropdownHint {
+  grid-column: 2;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: #334155;
+  display: block;
+  margin-top: 1px;
+}
+
+.dropdownDivider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin: 6px 4px;
+}
+
+.dropdownLogout {
+  color: #64748b;
+}
+.dropdownLogout:hover {
+  background: rgba(239,68,68,0.08) !important;
+  color: #fca5a5 !important;
+}
+
+/* Becomes a glass bar after scrolling */
+.scrolled {
+  background: #0a0a0abf;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* When the mobile menu is open, the bar takes on the same glass tone as
+   the panel below it so the two read as one continuous surface instead
+   of a black panel floating under a transparent bar. */
+.menuOpen {
+  background: #0a0a0a;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+/* ── Logo ── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+/* ── Desktop Nav ── */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex: 1;
+}
+
+.navLink {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.navLink:hover { color: #f8fafc; }
+
+.authPlaceholder {
+  width: 200px;
+  height: 36px;
+}
+
+/* ── Active nav link ── */
+.navLinkActive {
+  color: #f8fafc !important;
+}
+
+/* ── Mobile logout ── */
+.mobileLogout {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #64748b;
+  padding: 12px 0;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: color 0.2s;
+}
+.mobileLogout:hover { color: #fca5a5; }
+
+/* ── Desktop CTAs ── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.btnGhost {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  transition: color 0.2s, background 0.2s;
+}
+.btnGhost:hover { color: #f8fafc; background: rgba(255,255,255,0.06); }
+
+.btnPrime {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #000;
+  background: #fff;
+  text-decoration: none;
+  padding: 9px 20px;
+  border-radius: 10px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+.btnPrime:hover {
+  background: #3b82f6;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(59,130,246,0.35);
+  transform: translateY(-1px);
+}
+
+/* ── Hamburger ── */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px; height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: auto;
+}
+
+.burger span {
+  display: block;
+  height: 2px;
+  background: #94a3b8;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+}
+
+.burger span:nth-child(1) { width: 22px; }
+.burger span:nth-child(2) { width: 16px; }
+.burger span:nth-child(3) { width: 22px; }
+
+.burgerOpen span:nth-child(1) { transform: translateY(7px) rotate(45deg);  width: 22px; }
+.burgerOpen span:nth-child(2) { opacity: 0; }
+.burgerOpen span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); width: 22px; }
+
+/* ── Mobile Menu ── */
+.mobileMenu {
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #0a0a0a;
+  /* Soften the bottom: rounded corners + a drop shadow so the panel
+     floats over the page instead of ending in a hard full-width line. */
+  border-radius: 0 0 22px 22px;
+  box-shadow: 0 30px 50px -12px rgba(0, 0, 0, 0.75);
+  /* Hide the scrollbar — otherwise the global gold scrollbar flashes on
+     the right while the menu animates open (content briefly overflows the
+     growing max-height). Touch scrolling still works. */
+  scrollbar-width: none;
+}
+.mobileMenu::-webkit-scrollbar { display: none; }
+
+/* Tall enough for the full logged-in list (Dashboard … Billing, Log out),
+   and scrollable on short screens so nothing gets clipped. */
+.mobileMenuOpen { max-height: calc(100vh - 74px); overflow-y: auto; }
+
+.mobileNav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobileNavLink {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-decoration: none;
+  padding: 12px 0;
+  transition: color 0.2s;
+}
+.mobileNavLink:hover { color: #f8fafc; }
+
+.mobileDivider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin: 8px 0;
+}
+
+.mobileGhost {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-decoration: none;
+  padding: 12px 0;
+}
+
+.mobilePrime {
+  display: block;
+  margin-top: 8px;
+  padding: 14px 24px;
+  background: #fff;
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: background 0.2s, color 0.2s;
+}
+.mobilePrime:hover { background: #3b82f6; color: #fff; }
+
+/* ── Responsive ── */
+/* 940, not 768. The desktop nav used to stay on down to 768px, where it no
+   longer fit: the nav links, "Log in" and the "Start Free Trial" button were
+   squeezed until "Log in" wrapped onto two lines. It was raised to 860, then to
+   940 when Calculator became a fifth nav link, which needs roughly another 110px
+   of the same row. Measured: logo 140 + gap 48 + five links ~412 + gap 48 +
+   actions ~202 comes to about 850, so 940 leaves real headroom rather than
+   sitting on the limit. */
+@media (max-width: 940px) {
+  .nav, .actions { display: none; }
+  .burger        { display: flex; }
+  .mobileMenu    { display: block; }
+
+  /* Drop the header's side padding so the menu panel spans the full
+     screen width (no transparent strips showing the page behind it);
+     the inset moves onto .inner so the logo/burger row keeps its margin. */
+  .header { padding: 0; }
+  .inner  { padding: 0 20px; }
+
+  /* Size the bar so the logo sits cleanly inside the header on mobile. */
+  .inner   { height: 82px; }
+
+  /* Wider menu items with a touch more breathing room. */
+  .mobileNav { padding: 16px 20px 24px; }
+  .mobileNavLink, .mobileGhost { padding: 14px 4px; font-size: 1.05rem; }
+
+  /* Kill the blue tap-highlight flash when tapping menu rows on mobile. */
+  .mobileNavLink,
+  .mobileGhost,
+  .mobilePrime,
+  .mobileLogout,
+  .burger,
+  .logo {
+    -webkit-tap-highlight-color: transparent;
+  }
+}

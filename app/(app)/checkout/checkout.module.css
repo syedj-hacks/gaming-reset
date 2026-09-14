@@ -1,0 +1,1192 @@
+/* ============================================================
+   GAMING RESET — CHECKOUT PAGE
+   ============================================================ */
+
+.page {
+  min-height: 100vh;
+  background: #06070b;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #f1f5f9;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* The site header is position:fixed and 72px tall, so the top padding is what
+     keeps this page out from under it. At the old 80px that left just 8px of
+     clearance and the card read as welded to the header. 120px gives a proper
+     48px gap. (When the content is shorter than the viewport, align-items:center
+     takes over and the gap is larger still.) */
+  padding: 120px 24px 80px;
+}
+
+.pageBg {
+  position: fixed;
+  inset: -10%;
+  background:
+    radial-gradient(ellipse 60% 40% at 15% 50%, rgba(59,130,246,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 85% 30%, rgba(37,99,235,0.06) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+  animation: auroraShift 18s ease-in-out infinite;
+}
+
+@keyframes auroraShift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
+  50%      { transform: translate3d(2%, -2%, 0) scale(1.06); opacity: 0.82; }
+}
+
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.pageMesh {
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Layout ── */
+.container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ── Left Panel ── */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: riseIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Right panel rises in just after the left for a subtle stagger */
+.right {
+  animation: riseIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+.backLink {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #475569;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+  align-self: flex-start;
+}
+.backLink:hover { color: #94a3b8; }
+
+.planCard {
+  background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.012));
+  backdrop-filter: blur(20px) saturate(1.1);
+  -webkit-backdrop-filter: blur(20px) saturate(1.1);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.06) inset, 0 24px 60px rgba(0,0,0,0.5);
+}
+
+.planCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 12%; right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(96,165,250,0.9), transparent);
+}
+
+.planCardGlow {
+  position: absolute;
+  top: -60px; left: -60px;
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.planTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.planBadge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #3b82f6;
+}
+
+/* Live secure indicator */
+.liveStrip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #4ade80;
+  background: rgba(34,197,94,0.08);
+  border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 20px;
+  padding: 4px 10px 4px 8px;
+  white-space: nowrap;
+}
+
+.liveDot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34,197,94,0.5);
+  animation: livePulse 2s ease-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes livePulse {
+  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+  70%  { box-shadow: 0 0 0 7px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
+
+.planTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #f8fafc;
+  letter-spacing: -0.04em;
+  margin: 0 0 16px;
+}
+
+.planPrice {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 28px;
+}
+
+.planAmount {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #3b82f6;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  filter: drop-shadow(0 0 16px rgba(59,130,246,0.4));
+  animation: priceGlow 4.5s ease-in-out infinite;
+}
+
+@keyframes priceGlow {
+  0%, 100% { filter: drop-shadow(0 0 14px rgba(59,130,246,0.35)); }
+  50%      { filter: drop-shadow(0 0 26px rgba(59,130,246,0.7)); }
+}
+
+/* Accepted payment methods */
+.payMethodsLabel {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #64748b;
+  margin: 0 0 10px;
+}
+
+.payMethods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+
+/* Deliberately prominent: these signal the trusted, low-friction ways to pay,
+   so they use a brighter label, a stronger surface, and an accent-tinted
+   border rather than the muted chip they used to be. */
+.payBadge {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: #f1f5f9;
+  background: rgba(59,130,246,0.08);
+  border: 1px solid rgba(59,130,246,0.28);
+  border-radius: 9px;
+  padding: 8px 14px;
+  white-space: nowrap;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.payBadge:hover {
+  color: #ffffff;
+  border-color: rgba(59,130,246,0.6);
+  box-shadow: 0 6px 16px rgba(59,130,246,0.18);
+  transform: translateY(-1px);
+}
+
+.planPer {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.planPriceSub {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #64748b;
+  margin: -18px 0 26px;
+}
+
+.planDivider {
+  height: 1px;
+  background: rgba(255,255,255,0.05);
+  margin-bottom: 24px;
+}
+
+.planFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.planFeature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  animation: featureIn 0.5s ease both;
+}
+
+/* Stagger each feature in on load */
+.planFeature:nth-child(1) { animation-delay: 0.20s; }
+.planFeature:nth-child(2) { animation-delay: 0.28s; }
+.planFeature:nth-child(3) { animation-delay: 0.36s; }
+.planFeature:nth-child(4) { animation-delay: 0.44s; }
+.planFeature:nth-child(5) { animation-delay: 0.52s; }
+.planFeature:nth-child(6) { animation-delay: 0.60s; }
+.planFeature:nth-child(7) { animation-delay: 0.68s; }
+.planFeature:nth-child(8) { animation-delay: 0.76s; }
+
+@keyframes featureIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.featureCheck {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #22c55e;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Right Panel ── */
+.formCard {
+  background: #0d1017;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.formCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59,130,246,0.3), transparent);
+}
+
+.formCardTop { margin-bottom: 32px; }
+
+.formTitle {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #f8fafc;
+  letter-spacing: -0.03em;
+  margin: 0 0 6px;
+}
+
+.formSub {
+  font-size: 0.85rem;
+  color: #475569;
+  margin: 0;
+}
+
+/* ── Loading ── */
+.loadingWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 48px 0;
+}
+
+.loadingSpinner {
+  width: 36px; height: 36px;
+  border: 2px solid rgba(255,255,255,0.06);
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.loadingText {
+  font-size: 0.82rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+/* ── Form ── */
+.form { display: flex; flex-direction: column; gap: 24px; }
+
+/* ── Paddle inline checkout frame ── */
+/* Paddle's payment fields live in a cross-origin iframe we can't style; we only
+   frame it so it blends into the card. Branding (field colours, logo, font) is
+   set in the Paddle dashboard → Checkout settings → Branding. */
+.paddleFrameOuter {
+  position: relative;
+  min-height: 440px;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.008));
+  padding: 8px;
+  overflow: hidden;
+}
+
+.paddleFrame {
+  width: 100%;
+  min-height: 424px;
+}
+
+/* Loading overlay shown until the iframe paints */
+.paddleFrameLoading {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: #0d1017;
+  border-radius: 13px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ── Error ── */
+.errorBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(239,68,68,0.06);
+  border: 1px solid rgba(239,68,68,0.2);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  line-height: 1.5;
+}
+
+.errorIcon {
+  width: 18px; height: 18px;
+  background: rgba(239,68,68,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #ef4444;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Submit button ── */
+.submitBtn {
+  width: 100%;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(37,99,235,0.32);
+  transition: filter 0.2s, box-shadow 0.2s, transform 0.15s;
+  letter-spacing: 0.3px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  filter: brightness(1.08);
+  box-shadow: 0 12px 32px rgba(37,99,235,0.45);
+  transform: translateY(-1px);
+}
+
+.submitBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btnInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btnSpinner {
+  width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ── Security note ── */
+.securityNote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: #334155;
+  margin: 0;
+}
+
+/* ── Success state ── */
+.successState {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.successIcon {
+  width: 72px; height: 72px;
+  background: rgba(34,197,94,0.1);
+  border: 1px solid rgba(34,197,94,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #22c55e;
+  margin-bottom: 8px;
+  box-shadow: 0 0 40px rgba(34,197,94,0.15);
+}
+
+.successTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #f8fafc;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.successSub {
+  font-size: 0.9rem;
+  color: #475569;
+  margin: 0;
+}
+
+/* ============================================================
+   ADD THESE TO THE BOTTOM OF checkout.module.css
+   ============================================================ */
+
+/* ── Plan selector (segmented) ── */
+.planSelect {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.planOption {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  padding: 14px 14px 13px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.planOption:hover:not(.planOptionDisabled):not(.planOptionActive) {
+  border-color: rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.04);
+  transform: translateY(-1px);
+}
+
+.planOptionActive {
+  border-color: rgba(59,130,246,0.55);
+  background: rgba(59,130,246,0.10);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.14), 0 10px 26px rgba(37,99,235,0.18);
+}
+
+.planOptionDisabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.planOptionBest {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #052e16;
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  border-radius: 20px;
+  padding: 3px 9px;
+  box-shadow: 0 4px 12px rgba(34,197,94,0.35);
+}
+
+.planOptionName {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.planOptionActive .planOptionName { color: #93c5fd; }
+
+.planOptionPrice {
+  font-size: 1.18rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #f8fafc;
+  line-height: 1.1;
+}
+
+.planOptionPer {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0;
+}
+
+.planOptionDay {
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+/* ── Plan unavailable (card price id not configured yet) ── */
+.unavailableBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(245,158,11,0.06);
+  border: 1px solid rgba(245,158,11,0.22);
+  border-radius: 14px;
+  padding: 18px 18px;
+}
+
+.unavailableIcon {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.unavailableTitle {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #fcd34d;
+  margin: 0 0 4px;
+}
+
+.unavailableText {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Payment method tabs ── */
+.methodTabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.methodTab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.methodTab:hover { color: #94a3b8; border-color: rgba(255,255,255,0.12); }
+
+.methodTabActive {
+  background: rgba(59,130,246,0.08);
+  border-color: rgba(59,130,246,0.3);
+  color: #60a5fa;
+}
+
+.cryptoBadge {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #22c55e;
+  background: rgba(34,197,94,0.1);
+  border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 4px;
+  padding: 1px 5px;
+  text-transform: uppercase;
+}
+
+/* ── Crypto init state ── */
+.cryptoInit { display: flex; flex-direction: column; gap: 20px; }
+
+.cryptoInitInfo {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cryptoInitRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cryptoInitLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.cryptoInitValue {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.cryptoNote {
+  font-size: 0.72rem;
+  color: #334155;
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Crypto pending state ── */
+.cryptoPending { display: flex; flex-direction: column; gap: 20px; }
+
+.cryptoPendingHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cryptoStatusDot {
+  width: 8px; height: 8px;
+  background: #f59e0b;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(245,158,11,0.4);
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(245,158,11,0.4); }
+  70%  { box-shadow: 0 0 0 8px rgba(245,158,11,0); }
+  100% { box-shadow: 0 0 0 0 rgba(245,158,11,0); }
+}
+
+.cryptoStatusText {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #f59e0b;
+  flex: 1;
+}
+
+.cryptoTimer {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #475569;
+  font-variant-numeric: tabular-nums;
+}
+
+.cryptoAmountRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.cryptoAmount {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.cryptoCurrency {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #3b82f6;
+}
+
+.cryptoAmountNote {
+  font-size: 0.78rem;
+  color: #475569;
+  margin: -12px 0 0;
+}
+
+.cryptoAddressBlock { display: flex; flex-direction: column; gap: 8px; }
+
+.cryptoAddressLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #475569;
+}
+
+.cryptoAddressRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.cryptoAddress {
+  flex: 1;
+  font-size: 0.78rem;
+  font-family: 'Courier New', monospace;
+  color: #94a3b8;
+  word-break: break-all;
+  line-height: 1.4;
+}
+
+.cryptoCopyBtn {
+  padding: 5px 12px;
+  background: rgba(59,130,246,0.1);
+  border: 1px solid rgba(59,130,246,0.25);
+  border-radius: 7px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #3b82f6;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+.cryptoCopyBtn:hover { background: rgba(59,130,246,0.18); }
+.cryptoCopied { background: rgba(34,197,94,0.1) !important; border-color: rgba(34,197,94,0.25) !important; color: #22c55e !important; }
+
+.cryptoNotes {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cryptoNotes p {
+  font-size: 0.78rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cryptoNotes strong { color: #94a3b8; }
+
+/* ── Crypto success ── */
+.cryptoSuccess {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.cryptoSuccessIcon {
+  width: 56px; height: 56px;
+  background: rgba(34,197,94,0.1);
+  border: 1px solid rgba(34,197,94,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #22c55e;
+}
+
+.cryptoSuccessText {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ── Crypto expired ── */
+.cryptoExpired {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.cryptoExpiredText {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.cryptoRetryBtn {
+  padding: 10px 24px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #94a3b8;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+.cryptoRetryBtn:hover { background: rgba(255,255,255,0.09); }
+
+/* ── Network select ── */
+.cryptoSelectLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #475569;
+  margin: 0;
+}
+
+.cryptoNetworkGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.cryptoNetworkCard {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.cryptoNetworkCard:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.cryptoNetworkCardActive {
+  background: rgba(255,255,255,0.04);
+}
+
+.cryptoNetworkCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cryptoNetworkLabel {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  letter-spacing: -0.02em;
+}
+
+.cryptoNetworkTag {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.cryptoNetworkName {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #64748b;
+  line-height: 1.3;
+}
+
+.cryptoNetworkMeta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7rem;
+  color: #334155;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* ── Network pill in pending state ── */
+.cryptoNetworkPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #94a3b8;
+  align-self: flex-start;
+}
+
+.cryptoNetworkPillDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cryptoNetworkPillTag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #475569;
+  background: rgba(255,255,255,0.05);
+  border-radius: 3px;
+  padding: 1px 5px;
+  text-transform: uppercase;
+}
+
+/* ── QR Code ── */
+.cryptoQrWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+}
+
+.cryptoQrLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #334155;
+  margin: 0;
+  text-align: center;
+}
+
+/* ── Crypto benefits banner ── */
+.cryptoBenefits {
+  background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(34,197,94,0.05) 100%);
+  border: 1px solid rgba(59,130,246,0.25);
+  border-radius: 14px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cryptoBenefitsTitle {
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.cryptoBenefitsList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cryptoBenefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+/* Clean accent dot replaces the old emoji marker */
+.cryptoBenefit::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3b82f6;
+  box-shadow: 0 0 8px rgba(59,130,246,0.5);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+.cryptoBenefitLabel {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #f8fafc;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.cryptoBenefitDesc {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-top: 3px;
+}
+
+/* ── Crypto pay button (gradient override) ── */
+.cryptoPayBtn {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(59,130,246,0.25);
+  border-radius: 14px;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+}
+
+.cryptoPayBtn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  color: #fff;
+  box-shadow: 0 12px 32px rgba(59,130,246,0.4);
+  transform: translateY(-2px);
+}
+
+.cryptoPayBtn:disabled {
+  background: rgba(255,255,255,0.05);
+  color: #334155;
+  box-shadow: none;
+  opacity: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  /* Same 72px fixed header on mobile (it has no height override), so 88px left
+     only 16px of clearance. 104px gives a 32px gap — tighter than desktop on
+     purpose, since vertical space is scarcer here. */
+  .page { padding: 104px 16px 40px; align-items: flex-start; }
+  .container { grid-template-columns: 1fr; gap: 20px; }
+  .planCard, .formCard { padding: 28px 24px; border-radius: 18px; }
+  .planAmount { font-size: 2.4rem; }
+  .planTitle { font-size: 1.4rem; }
+  /* Let the column and its inner grids shrink to the viewport instead of
+     forcing their content width and overflowing (clipped) off the right. */
+  .left, .right { min-width: 0; }
+  .planOption, .cryptoNetworkCard { min-width: 0; }
+}
+
+@media (max-width: 480px) {
+  /* Bigger, more prominent pay-method tabs, with their icons shown. */
+  .methodTab { font-size: 0.95rem; padding: 15px 12px; gap: 9px; }
+  .methodTab svg { width: 17px; height: 17px; }
+  .cryptoBadge { display: none; }
+
+  /* Three 1fr columns are too tight on a phone — the price spills out of
+     the box. Stack the plans as full-width rows: name + per-day on the
+     left, price on the right, so everything fits comfortably. */
+  .planSelect { grid-template-columns: 1fr; gap: 8px; }
+  .planOption {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "name  price"
+      "day   price";
+    align-items: center;
+    column-gap: 12px;
+    row-gap: 2px;
+    padding: 13px 16px;
+    border-radius: 12px;
+  }
+  .planOptionName  { grid-area: name;  font-size: 0.86rem; }
+  .planOptionPrice { grid-area: price; font-size: 1.1rem; white-space: nowrap; justify-self: end; }
+  .planOptionDay   { grid-area: day;   font-size: 0.72rem; }
+  /* Anchor the "Best value" badge to the row's top-right instead of the
+     centre, where it floated awkwardly over the wide row. */
+  .planOptionBest  { left: auto; right: 14px; transform: none; font-size: 0.55rem; padding: 2px 7px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pageBg, .left, .right, .planAmount, .liveDot, .planFeature, .cryptoStatusDot {
+    animation: none !important;
+  }
+  .planFeature { opacity: 1; transform: none; }
+}

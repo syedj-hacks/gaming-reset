@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Diagram of the variable reward loop: play one more game, get an uncertain result, feel a dopamine spike, chase the unmet urge, and repeat.">
+  <defs>
+    <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#93c5fd"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="gl" cx="50%" cy="45%" r="60%">
+      <stop offset="0" stop-color="#3b82f6" stop-opacity="0.30"/>
+      <stop offset="0.6" stop-color="#3b82f6" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#ffffff" opacity="0.045"/>
+    </pattern>
+    <marker id="ah" viewBox="0 0 12 12" refX="6" refY="6" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M1 1 L11 6 L1 11 z" fill="#3b82f6"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="630" fill="#07090f"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect width="1200" height="630" fill="url(#gl)"/>
+
+  <!-- nodes -->
+  <g>
+    <circle cx="600" cy="135" r="11" fill="#0b1220" stroke="url(#rg)" stroke-width="3"/>
+    <circle cx="765" cy="300" r="11" fill="#0b1220" stroke="url(#rg)" stroke-width="3"/>
+    <circle cx="600" cy="465" r="11" fill="#0b1220" stroke="url(#rg)" stroke-width="3"/>
+    <circle cx="435" cy="300" r="11" fill="#0b1220" stroke="url(#rg)" stroke-width="3"/>
+  </g>
+
+  <!-- ring arcs (clockwise), arrowheads show direction of the loop -->
+  <g fill="none" stroke="url(#rg)" stroke-width="3" stroke-linecap="round" marker-end="url(#ah)">
+    <path d="M600 135 A 165 165 0 0 1 765 300"/>
+    <path d="M765 300 A 165 165 0 0 1 600 465"/>
+    <path d="M600 465 A 165 165 0 0 1 435 300"/>
+    <path d="M435 300 A 165 165 0 0 1 600 135"/>
+  </g>
+
+  <!-- node labels -->
+  <g font-family="'Segoe UI', Arial, sans-serif" font-weight="700" fill="#e2e8f0">
+    <text x="600" y="96" text-anchor="middle" font-size="22">Play "one more"</text>
+    <text x="795" y="294" text-anchor="start" font-size="22">Uncertain</text>
+    <text x="795" y="321" text-anchor="start" font-size="22">result</text>
+    <text x="600" y="507" text-anchor="middle" font-size="22">Dopamine spike</text>
+    <text x="405" y="294" text-anchor="end" font-size="22">Unmet urge,</text>
+    <text x="405" y="321" text-anchor="end" font-size="22">repeat</text>
+  </g>
+
+  <!-- center caption -->
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="292" font-size="15" font-weight="800" letter-spacing="3" fill="#60a5fa">THE REWARD LOOP</text>
+    <text x="600" y="322" font-size="17" font-weight="600" fill="#94a3b8">why "one more" never ends</text>
+  </g>
+</svg>

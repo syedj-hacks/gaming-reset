@@ -1,0 +1,474 @@
+/* Palette, spacing and type scale are lifted from stats.module.css on purpose:
+   this is the second cornerstone asset and the two should read as siblings.
+   Dark hero holds the tool, light body holds the maths and the FAQ. */
+
+.page {
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+/* ── Hero ── */
+.hero {
+  background: #07090f;
+  padding: 150px 24px 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroGlow {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 520px;
+  max-width: 100%;
+  background: radial-gradient(ellipse, rgba(59, 130, 246, 0.16) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.heroMesh {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 5;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* No eyebrow tag on this page: the H1 is the first thing in the hero. */
+
+.title {
+  font-size: clamp(2rem, 4.6vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  color: #f8fafc;
+  margin: 0 0 22px;
+}
+
+.subtitle {
+  font-size: clamp(1.02rem, 2vw, 1.18rem);
+  line-height: 1.65;
+  color: #94a3b8;
+  margin: 0 0 40px;
+  max-width: 680px;
+}
+
+/* ── Sliders ── */
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 26px;
+}
+
+.control {
+  min-width: 0;
+}
+
+.controlHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.controlLabel {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+.controlValue {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #f8fafc;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Range input needs explicit cross-browser styling or it renders as the OS
+   default, which looks broken on a dark card. */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #3b82f6;
+  border: 2px solid #f8fafc;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.6);
+}
+
+.slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #3b82f6;
+  border: 2px solid #f8fafc;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.6);
+}
+
+.slider:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+.slider:focus-visible::-moz-range-thumb {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.scale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+/* ── Headline result ── */
+.result {
+  margin-top: 32px;
+  padding: 32px 28px;
+  background: linear-gradient(180deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.02));
+  border: 1px solid rgba(239, 68, 68, 0.22);
+  border-radius: 18px;
+}
+
+.resultMain {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.resultBig {
+  font-size: clamp(3rem, 9vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  color: #f87171;
+  font-variant-numeric: tabular-nums;
+}
+
+.resultUnit {
+  font-size: clamp(1rem, 2.2vw, 1.22rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #f8fafc;
+  max-width: 320px;
+}
+
+.resultSub {
+  margin: 18px 0 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #94a3b8;
+}
+.resultSub strong {
+  color: #f8fafc;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── One year as a dot grid ── */
+.yearBlock {
+  margin-top: 32px;
+  padding: 26px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 18px;
+}
+
+.yearLabel {
+  margin: 0 0 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #94a3b8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(28, 1fr);
+  gap: 5px;
+}
+
+.dot {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.09);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dotLost {
+  background: #ef4444;
+  box-shadow: 0 0 7px rgba(239, 68, 68, 0.5);
+}
+
+.yearCount {
+  margin: 18px 0 0;
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+.yearCount strong {
+  color: #f87171;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Alternative uses of the same hours ── */
+.swaps {
+  margin-top: 32px;
+}
+
+.swapsHead {
+  margin: 0 0 16px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #3b82f6;
+}
+
+.swapGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.swapCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  border-radius: 16px;
+  padding: 22px 18px;
+}
+
+.swapNum {
+  display: block;
+  font-size: clamp(1.7rem, 4.6vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #60a5fa;
+  margin-bottom: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.swapLabel {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #94a3b8;
+}
+
+.swapsNote {
+  margin: 16px 0 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+/* ── Soft CTA ── */
+.cta {
+  margin-top: 36px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.ctaText {
+  max-width: 620px;
+  margin: 0 auto 22px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #94a3b8;
+}
+
+.ctaBtn {
+  display: inline-block;
+  background: #ffffff;
+  color: #000000;
+  font-size: 0.98rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 15px 34px;
+  border-radius: 12px;
+  transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.ctaBtn:hover {
+  background: #3b82f6;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(59, 130, 246, 0.3);
+}
+
+.ctaMeta {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+/* ── Light body ── */
+.body {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 64px 24px 80px;
+}
+
+.lede {
+  font-size: clamp(1.15rem, 2.4vw, 1.3rem);
+  line-height: 1.7;
+  font-weight: 500;
+  color: #0f172a;
+  margin: 0 0 32px;
+}
+
+.p {
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: #334155;
+  margin: 0 0 26px;
+}
+
+.h2 {
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: #0f172a;
+  margin: 52px 0 20px;
+}
+
+.link {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s ease;
+}
+.link:hover { color: #1d4ed8; }
+
+/* ── FAQ ── */
+.faq {
+  margin: 8px 0;
+}
+
+.faqItem {
+  border-top: 1px solid #e5e7eb;
+}
+.faqItem:last-of-type {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.faqQ {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #0f172a;
+}
+.faqQ::-webkit-details-marker { display: none; }
+
+/* Plus that rotates into a cross when open, no dash glyphs used */
+.faqQ::after {
+  content: '+';
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #3b82f6;
+  transition: transform 0.2s ease;
+}
+.faqItem[open] .faqQ::after {
+  transform: rotate(45deg);
+}
+
+.faqA {
+  margin: 0 0 20px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #334155;
+}
+
+.footNote {
+  margin: 48px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .hero { padding: 120px 20px 56px; }
+  .subtitle { margin-bottom: 28px; }
+
+  /* Sliders stack: side by side at 360px left the labels wrapping to 3 lines. */
+  .controls {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 20px 18px;
+    border-radius: 16px;
+  }
+  .controlHead { margin-bottom: 14px; }
+
+  .result { padding: 24px 20px; }
+  .resultUnit { max-width: 100%; }
+
+  .yearBlock { padding: 20px 18px; }
+  /* More columns = fewer rows, so the year grid stays a band rather than a wall. */
+  .grid { grid-template-columns: repeat(21, 1fr); gap: 4px; }
+
+  .swapGrid { grid-template-columns: 1fr; gap: 12px; }
+  .swapCard { padding: 18px 16px; }
+  .swapNum { margin-bottom: 6px; }
+
+  .cta { margin-top: 30px; padding-top: 26px; }
+  .ctaBtn { display: block; padding: 15px 24px; }
+
+  .body { padding: 52px 20px 68px; }
+  .faqQ { font-size: 1.05rem; padding: 18px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot { transition: none; }
+  .ctaBtn:hover { transform: none; }
+}

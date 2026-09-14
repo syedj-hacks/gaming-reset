@@ -1,0 +1,23 @@
+.banner { position: relative; overflow: hidden; border: 1px solid #83b5f349; border-radius: 12px; background: radial-gradient(ellipse at 85% 0, #447fc233, transparent 62%), linear-gradient(115deg, #192f4b, #111e2f); padding: 28px; }
+.accentBar { position: absolute; top: 0; left: 25px; right: 25px; height: 1px; background: linear-gradient(90deg, transparent, #98c5ff66, transparent); }
+.bannerGlow { position: absolute; right: -80px; top: -100px; width: 300px; height: 300px; border: 1px solid #93bffa15; border-radius: 50%; pointer-events: none; }
+.bannerInner { display: grid; grid-template-columns: 1.45fr 1fr; gap: 40px; position: relative; align-items: center; }
+.bannerLeft, .bannerRight { min-width: 0; }
+.label { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; color: #9ec2ef; font-size: 12px; letter-spacing: 1px; }
+.iconWrap { display: grid; place-items: center; width: 29px; height: 29px; flex-shrink: 0; border: 1px solid #86b5f33e; border-radius: 7px; color: #a6ccfd; background: #35639929; }
+.tag { font-size: 11px; letter-spacing: .7px; color: #769dcc; border: 1px solid #8eb9f02b; padding: 3px 7px; border-radius: 4px; }
+.title { font-size: 27px; font-weight: 500; letter-spacing: -.8px; line-height: 1.2; color: #c6defd; max-width: 380px; margin: 17px 0; }
+.points { list-style: none; display: grid; gap: 8px; margin: 0; padding: 0; }
+.points li { position: relative; padding-left: 20px; color: #8ba7ca; font-size: 14px; line-height: 1.7; }
+.points li::before { content: '✓'; color: #8ebcf8; position: absolute; left: 0; }
+.bannerRight { padding: 23px; border: 1px solid #92bdf227; border-radius: 9px; background: #0d192733; }
+.downloadBtn { display: flex; align-items: center; justify-content: center; padding: 13px 16px; border: 1px solid #aed2ff40; border-radius: 6px; background: linear-gradient(110deg, #5397f7, #367cdf); color: #fff; font-size: 14px; font-weight: 600; line-height: 1.6; text-decoration: none; transition: transform .25s, box-shadow .25s; text-align: center; }
+.downloadBtn:hover { transform: translateY(-2px); box-shadow: 0 8px 27px #5799f728; }
+.downloadBtn:focus-visible { outline: 2px solid #c0deff; outline-offset: 4px; }
+.downloadBtnSoon { color: #91afd5; background: #34527e32; border-color: #82a9de3b; }
+.meta { color: #7b9bc4; font-size: 12px; line-height: 1.7; margin-top: 13px; text-align: center; }
+.note { font-size: 12px; color: #6c8ab2; line-height: 1.7; margin-top: 12px; text-align: center; }
+.noteLink { color: #91b7e8; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 1100px) { .banner { padding: 25px; } .bannerInner { gap: 23px; grid-template-columns: 1.3fr 1fr; } .bannerRight { padding: 18px; } .title { font-size: 24px; } }
+@media (max-width: 700px) { .banner { padding: 24px; } .bannerInner { grid-template-columns: 1fr; gap: 24px; } .title { font-size: 29px; } .points li { font-size: 14px; } .downloadBtn { font-size: 15px; } .meta { font-size: 12px; } .note { font-size: 12px; } }
+@media (prefers-reduced-motion: reduce) { .banner *, .banner *::before { animation: none !important; transition: none !important; } }

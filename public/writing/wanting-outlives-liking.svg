@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Over years of playing, the pull to play one more rises and then stays high, while how much you actually enjoy playing steadily declines. The widening gap between the two is what people are asking about when they say games are not fun anymore.">
+  <defs>
+    <linearGradient id="gap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b82f6" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#3b82f6" stop-opacity="0.03"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" rx="20" fill="#ffffff"/>
+
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="62" font-size="28" font-weight="800" fill="#0f172a">Wanting and liking are not the same system</text>
+    <text x="600" y="96" font-size="17" font-weight="600" fill="#64748b">Which is how the pull outlives the pleasure</text>
+  </g>
+
+  <!-- baseline -->
+  <line x1="120" y1="470" x2="1080" y2="470" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- the widening gap -->
+  <path d="M360 248 C 450 222, 500 215, 560 210 C 760 200, 920 205, 1080 208 L1080 415 C 950 400, 840 385, 660 350 C 560 328, 450 282, 360 252 Z" fill="url(#gap)"/>
+
+  <!-- how much you enjoy it: declining -->
+  <path d="M120 200 C 320 250, 480 310, 660 350 C 840 385, 950 400, 1080 415" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+  <!-- the pull to play: rising, then flat -->
+  <path d="M120 350 C 250 262, 400 220, 560 210 C 760 200, 920 205, 1080 208" fill="none" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
+
+  <circle cx="1080" cy="208" r="6" fill="#ffffff" stroke="#3b82f6" stroke-width="4"/>
+  <circle cx="1080" cy="415" r="6" fill="#ffffff" stroke="#94a3b8" stroke-width="4"/>
+
+  <g font-family="'Segoe UI', Arial, sans-serif" text-anchor="end">
+    <text x="1058" y="180" font-size="17" font-weight="800" fill="#3b82f6">The pull to play one more</text>
+    <text x="1058" y="450" font-size="17" font-weight="800" fill="#94a3b8">How much you actually enjoy it</text>
+  </g>
+
+  <text x="700" y="305" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="17" font-weight="700" fill="#1e40af">The gap you came here to ask about</text>
+
+  <g font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="600" fill="#94a3b8">
+    <text x="120" y="498" text-anchor="start">When you started</text>
+    <text x="1080" y="498" text-anchor="end">Now</text>
+  </g>
+
+  <text x="600" y="560" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#94a3b8">The shape people describe. Enjoyment was never the thing holding you in the chair.</text>
+</svg>

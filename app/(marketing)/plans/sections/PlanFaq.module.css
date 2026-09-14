@@ -1,0 +1,128 @@
+.section {
+  background: #f1f5f9;
+  padding: 110px 24px 120px;
+}
+
+.inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.head {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin-bottom: 18px;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.04em;
+  margin: 0 0 16px;
+}
+
+.sub {
+  font-size: 1.05rem;
+  color: #5b6678;
+  margin: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.itemReveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.listOn .itemReveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.item {
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.itemOpen {
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08);
+}
+
+.q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit; /* buttons don't inherit font-family — without this it falls back to Arial */
+  font-size: 1.04rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+.icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.iconBar {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 16px;
+  height: 2px;
+  margin: -1px 0 0 -8px;
+  background: #3b82f6;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+}
+.iconBarV { transform: rotate(90deg); }
+.itemOpen .iconBarV { transform: rotate(0deg); }
+
+.aWrap {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.a {
+  margin: 0;
+  padding: 0 26px 24px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #475569;
+}
+
+@media (max-width: 768px) {
+  .section { padding: 80px 20px 90px; }
+  .q { padding: 18px 20px; font-size: 0.98rem; }
+  .a { padding: 0 20px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .itemReveal { opacity: 1; transform: none; transition: none; }
+  .aWrap { transition: none; }
+}

@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# The private app surface (dashboard, onboarding, checkout, success,
+# leaderboard, settings, and the login/signup/password pages) used to be
+# Disallow'd here. It deliberately is not any more.
+#
+# Disallow blocks crawling, not indexing. A disallowed URL can still be indexed
+# from a link and shown as a bare result, and because the crawler is locked out
+# it can never read the page's noindex tag to drop it. Those pages now each
+# carry `robots: { index: false, follow: false }` instead, which only works if
+# crawlers are allowed in to see it.
+#
+# Deliberately not named anywhere in this file: the admin path. robots.txt is
+# public, so listing a private route here advertises it. It is covered by the
+# same noindex tag plus its own separate auth.
+
+Sitemap: https://gamingreset.com/sitemap.xml
